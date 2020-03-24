@@ -55,7 +55,7 @@ public class StudentController {
 		return "delete";
 	}
 
-	@RequestMapping(value = "getAll", method = {RequestMethod.POST,RequestMethod.GET})
+	@RequestMapping(value = "getAll", method = RequestMethod.GET)
 	public String getAll(HttpServletRequest request) {
 		List<Student> s = student.getAll();
 		request.setAttribute("list", s);
