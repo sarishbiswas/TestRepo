@@ -46,9 +46,11 @@ public class AppController {
 	}
 	@RequestMapping(value="insert", method = RequestMethod.POST)
 	public ModelAndView insert(@ModelAttribute("employee") Employee employee) {
-		ModelAndView mv = new ModelAndView("home-new");
 		String res=employeeService.insert(employee);
+		List<Employee> list = employeeService.getAll();
+		ModelAndView mv = new ModelAndView("getAll");
 		mv.addObject("res",res);
+		mv.addObject("list",list);
 		System.out.println(employee);
 		return mv;
 	}
@@ -65,9 +67,11 @@ public class AppController {
 	}
 	@RequestMapping(value="update", method = RequestMethod.POST)
 	public ModelAndView update(@ModelAttribute("employee") Employee employee) {
-		ModelAndView mv = new ModelAndView("home-new");
 		String res=employeeService.update(employee);
+		List<Employee> list = employeeService.getAll();
+		ModelAndView mv = new ModelAndView("getAll");
 		mv.addObject("res",res);
+		mv.addObject("list",list);
 		System.out.println(employee);
 		return mv;
 	}
@@ -84,16 +88,18 @@ public class AppController {
 	}
 	@RequestMapping(value="delete", method = RequestMethod.POST)
 	public ModelAndView delete(@ModelAttribute("employee") Employee employee) {
-		ModelAndView mv = new ModelAndView("home-new");
 		String res=employeeService.delete(employee);
+		List<Employee> list = employeeService.getAll();
+		ModelAndView mv = new ModelAndView("getAll");
 		mv.addObject("res",res);
+		mv.addObject("list",list);
 		System.out.println(employee);
 		return mv;
 	}
 	
 	//getAll Controller
 	
-	@RequestMapping(value="getAll", method = RequestMethod.GET)
+	@RequestMapping(value="/", method = RequestMethod.GET)
 	public ModelAndView getAll(@ModelAttribute("employee") Employee employee) {
 		ModelAndView mv = new ModelAndView("getAll");
 		List<Employee> list = employeeService.getAll();

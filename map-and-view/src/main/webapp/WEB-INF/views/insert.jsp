@@ -26,7 +26,7 @@
 			<tr>
 				<td><input type="reset" name="reset" value="Reset" /></td>
 				<td><input type="submit" name="submit" value="Add" /> <a
-					href="getAll"><input type="button" name="home"
+					href="/map-and-view/"><input type="button" name="home"
 						value="home" /></a></td>
 			</tr>
 		</table>
