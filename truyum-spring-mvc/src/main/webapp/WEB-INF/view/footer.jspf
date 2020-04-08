@@ -1,0 +1,6 @@
+<style><%@include file="/WEB-INF/view/style.css"%></style>
+<footer class="">
+ <div class="">© 2020 Copyright:
+    <a href="/menu-item-list-admin">TruYum.com</a>
+  </div>
+</footer>

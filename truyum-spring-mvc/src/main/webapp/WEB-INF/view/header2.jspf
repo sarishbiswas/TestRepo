@@ -1,0 +1,13 @@
+<style><%@include file="/WEB-INF/view/style.css"%></style>
+<nav class="headerDiv">
+<a href="/menu-item-list-customer" class="navbarRight">
+    Menu
+  </a>
+  <a href="/show-cart?userId=1" class="navbarRight">
+    Cart
+  </a>
+  <a href="#" class="navbarLeft">
+    TruYum
+  </a>
+  
+</nav>

@@ -1,0 +1,30 @@
+.navbarRight{
+	float:right;
+	color:white;
+	padding:5px;	
+}
+.navbarLeft{
+	color:white;
+}
+.headerDiv{
+	background-color: #000080;
+	height:30px;
+	font-weight: bold;
+	padding:15px;
+}
+.boxBorder{
+	height: 60%;
+	width:60%;
+	margin: 5% 10% 20% 20%;
+}
+td,th{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+footer{
+	background-color: #c0c0c0;
+	height:30px;
+	font-weight: bold;
+	padding-top:15px;
+	padding-left: 20px;
+}

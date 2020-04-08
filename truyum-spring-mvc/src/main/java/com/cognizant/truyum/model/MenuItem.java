@@ -1,0 +1,134 @@
+package com.cognizant.truyum.model;
+
+import java.util.Date;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.stereotype.Component;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+@Component
+public class MenuItem implements Validator {
+	@NotNull
+	private long id;
+	@NotNull
+	@Size(min=2, max=65)
+	private String name;
+	@NotNull
+	private float price;
+	@NotNull
+	private boolean active;
+	@NotNull
+	private Date dateOfLaunch;
+	@NotNull
+	private String category;
+	@NotNull
+	private boolean freeDelivery;
+
+	public MenuItem() {
+		super();
+	}
+
+	public MenuItem(long id, String name, float price, boolean active, Date dateOfLaunch, String category,
+			boolean freeDelivery) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.active = active;
+		this.dateOfLaunch = dateOfLaunch;
+		this.category = category;
+		this.freeDelivery = freeDelivery;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public Date getdateOfLaunch() {
+		return dateOfLaunch;
+	}
+
+	public void setdateOfLaunch(Date dateOfLaunch) {
+		this.dateOfLaunch = dateOfLaunch;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public boolean isfreeDelivery() {
+		return freeDelivery;
+	}
+
+	public void setfreeDelivery(boolean freeDelivery) {
+		this.freeDelivery = freeDelivery;
+	}
+
+	@Override
+	public String toString() {
+		return "MenuItem [id=" + id + ", name=" + name + ", price=" + price + ", active=" + active + ", dateOfLaunch="
+				+ dateOfLaunch + ", category=" + category + ", freeDelivery=" + freeDelivery + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MenuItem other = (MenuItem) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return MenuItem.class.equals(clazz);
+	}
+
+	@Override
+	public void validate(Object target, Errors errors) {
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "Title is Required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "price", "Price is Required");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "dateOfLaunch", "Launch Date is Required");
+	}
+
+}
