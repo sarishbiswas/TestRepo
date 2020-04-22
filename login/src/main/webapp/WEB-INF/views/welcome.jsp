@@ -17,7 +17,7 @@
 <body>
 
 	<div class="container">
-		Welcome ${name }. your password is ${password }
+		<h1>Welcome ${user.userName }. your password is ${user.password }</h1>
 	</div>
 </body>
 </html>

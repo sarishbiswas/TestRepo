@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -15,26 +16,26 @@
 
 </head>
 <body>
+<div class="container">
+<h1 class="text-center">Please Login to Move to the next page</h1>
+<form:form action="validate" method="post" modelAttribute="user">
+<center>
+		<table>
+			<tr>
+				<th>Username : </th>
+				<td><form:input path="userName" /></td>
+				<td><form:errors path="userName" cssClass="errors text-danger" /></td>
+			</tr>
+			<tr>
+				<th>Password : </th>
+				<td><form:input path="password" type="password" /></td>
+				<td><form:errors path="password" cssClass="errors text-danger" /></td>
+			</tr>
+			<tr><td></td><td><input type="submit" name="submit" value="Login" class="btn btn-primary"></td></tr>
+		</table>
 
-	<div class="container">
-		<form method="post">
-		<fieldset class="form-group">
-			<label id="name">Username</label>
-			<input type="text" id="name" name="name" class="form-control"
-				onfocus="this.select();" onmouseup="return false;"
-				placeholer="Username" autofocus="autofocus" />
-		</fieldset>
-		<fieldset class="form-group">
-			<label id="password">Password</label>
-			<input type="password" id="password" name="password" class="form-control"
-				onfocus="this.select();" onmouseup="return false;"
-				placeholer="password" autofocus="autofocus" />
-		</fieldset>
-				<fieldset class="form-group">
-			<input class="btn btn-warning btn-lg" type="submit" value="Login"> 
-
-		</fieldset>
-		</form>
-	</div>
+</center>
+	</form:form>
+</div>
 </body>
 </html>
